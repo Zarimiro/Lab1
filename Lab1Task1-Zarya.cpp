@@ -5,45 +5,50 @@ using namespace std;
 
 int main() {
 	setlocale(LC_CTYPE, "Russian");
-	int y, x, a, b, c; //задание переменных.
-	cout << ""\tВведите значения a,b,c,x. Разрешено вводить только числа от 1 до 4." << endl;
+	int y, x, a, b, c; 
+	cout << "\tВведите значения a,b,c,x. Разрешено вводить только числа от 1 до 4." << endl;
 a:
 	cout << "a:";
 	cin >> a;
+	cout << endl;
 	if (a<1 || a>4) {
-		cout << "Ошибка!" << endl; //Вводим значения переменных,если число не входит в одз,то программа скачет наверх,к вводу переменной.
+		cout << "Ошибка!" << endl; 
 		goto a;
 	}
 b:
-	cout << "\nb:";
+	cout << "b:";
 	cin >> b;
+	cout<<endl;
 	if (b<1 || b>4) {
-		cout << "Оишбка" << endl;
+		cout << "Ошибка!" << endl;
 		goto b;
 	}
 c:
-	cout << "\nc:";
+	cout << "c:";
 	cin >> c;
+	cout << endl;
 	if (c<1 || c>4) {
 		cout << "Ошибка!" << endl;
 		goto c;
 	}
 x:
-	cout << "\nx:";
+	cout << "x:";
 	cin >> x;
+	cout << endl;
 	if (x<1 || x>4) {
 		cout << "Ошибка!" << endl;
 		goto x;
 	}
-	cout << "\nВведенное a:" << a; //показывает введенные значения
-	cout << "\nВведенное b:" << b;
-	cout << "\nВведенное c:" << c;
-	cout << "\Введенное x:" << x << endl;
-	y = pow(a, x*x - x + 5) + pow(b, x*x - x + 4) - pow(c, x*x + x + 2); // вычисляет некую операцию
-	cout << "\ny=" << y << endl;
+	cout << "Введенное a:" << a << endl;
+	cout << "Введенное b:" << b << endl;
+	cout << "Введенное c:" << c << endl;
+	cout << "Введенное x:" << x << endl;
+	y = pow(a, x*x - x + 5) + pow(b, x*x - x + 4) - pow(c, x*x + x + 2); 
+	cout << "y=" << y << endl;
 	system("pause");
 
 
 
 	return 0;
 }
+
