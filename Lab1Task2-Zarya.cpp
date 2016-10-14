@@ -1,5 +1,6 @@
 #include <iostream>
 #include <math.h>
+#include<conio.h>
 #define PI 3.14159265
 
 using namespace std;
@@ -7,51 +8,49 @@ using namespace std;
 
 
 int main() {
-	setlocale(LC_CTYPE, "Russian");
+	
 	double x, y, h, t, t1, t2;
 	double deg;
 	int v, alt, pl , g;
 
 
-	v_choice:
-	cout << "Происходит метание мячика. Введите начальную скорость мячика:";
+	
+	cout << "Enter the start speed:";
 	cin >> v;
-	if (v < 0) {
-		cout << "Ошибка!" << endl;
-		goto v_choice;
-	}
-	cout << endl;
+	 while(v<0){
+        cout<<"Error! Type normal value:";
+        cin>>v;
+    }
+    cout << endl;
 
-	deg_choice:
-	cout << "Введите угол,под которым бросают мяч(от 1 до 89):";
+	cout << "Enter the angle of throwing(from 1 to 89):";
 	cin >> deg;
-	if (deg < 1 || deg>89) {
-		cout << "Ошибка!" << endl;
-		goto deg_choice;
-	}
-	cout << endl;
-
-	alt_choice:
-	cout << "Начальную высоту,с которой метают мяч:";
+	 while(deg<1||deg>89){
+        cout<<"Error! Type normal value:";
+        cin>>deg;
+    }
+    cout << endl;
+	
+	cout << "Enter the start altitude:";
 	cin >> alt;
-	if (alt < 0) {
-		cout << "Ошибка!" << endl;
-		goto alt_choice;
-	}
-	cout << endl;
+	 while(alt<0){
+        cout<<"Error! Type normal value:";
+        cin>>alt;
+    }
+    cout << endl;
 
-	cout << "Выберите планету, на которой осуществляется бросок..." << endl;
-	cout << "\tМеркурий-введите 1." << endl;
-	cout << "\tВенера-введите 2." << endl;
-	cout << "\tЗемля-введите 3." << endl;
+	cout << "Choose a planet where the experiment happens..." << endl;
+	cout << "\tMercury-type 1." << endl;
+	cout << "\tVenus-type 2." << endl;
+	cout << "\tEarth-type 3." << endl;
 
-	pl_choice:
 	cout << "Выбор планеты:";
 	cin >> pl;
-	if (pl < 1 || pl>3) {
-		cout << "Ошибка!" << endl;
-		goto pl_choice;
-	}
+	 while(pl<1||pl>3){
+        cout<<"Error! Type normal value:";
+        cin>>pl;
+    }
+    cout << endl;
 
 	switch (pl) {
 	case 1: {
@@ -62,8 +61,6 @@ int main() {
 		t2 = sqrt(2 * y / g);
 		t = t1 + t2;
 		x = v*cos(deg*PI / 180)*t;
-
-		goto final;
 	}
 			break;
 
@@ -75,8 +72,6 @@ int main() {
 		t2 = sqrt(2 * y / g);
 		t = t1 + t2;
 		x = v*cos(deg*PI / 180)*t;
-
-		goto final;
 	}
 			break;
 	case 3: {
@@ -87,20 +82,16 @@ int main() {
 		t2 = sqrt(2 * y / g);
 		t = t1 + t2;
 		x = v*cos(deg*PI / 180)*t;
-
-		goto final;
 	}
 			break;
 	}
 
-
-	final:
 	cout << endl;
 	cout << "Дальность полета:" << x<< endl;
 	cout << "Макс высота подьема:" << y<< endl;
 	cout << "Время полета:" << t << endl;
 
-	system("pause");
+	_getch();
 
 
 	return 0;
